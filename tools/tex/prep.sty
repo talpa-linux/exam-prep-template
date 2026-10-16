@@ -1,0 +1,199 @@
+%% prep.sty -- one style for practice exams, answer keys and feedback documents.
+%% Usage:  \documentclass[a4paper,11pt]{article}  \usepackage{prep}
+%% Compile with tools/build_tex.sh.  Macro reference: tools/tex/README.md.
+%% Option `report` is used by tools/build_report.py only (different page layout).
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{prep}[2026/10/13 exam-prep documents]
+
+\newif\ifprep@report
+\DeclareOption{report}{\prep@reporttrue}
+\ProcessOptions\relax
+
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+\RequirePackage{amsmath,amssymb,mathtools,bm,siunitx}
+\RequirePackage{tikz,pgfplots}
+\RequirePackage{enumitem,booktabs,xcolor,graphicx,cancel}
+\RequirePackage{needspace,fancyhdr,lastpage}
+\RequirePackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\pgfplotsset{compat=newest}
+
+\ifprep@report
+  \RequirePackage[a4paper,left=17mm,right=17mm,top=22mm,bottom=19mm,headheight=14pt,headsep=8mm,footskip=9mm]{geometry}
+\else
+  \RequirePackage[a4paper,left=22mm,right=36mm,top=24mm,bottom=24mm,%
+    marginparwidth=24mm,marginparsep=4mm,headheight=14pt]{geometry}
+\fi
+
+\RequirePackage[hidelinks,bookmarksopen=true]{hyperref}
+
+% ---------------------------------------------------------------- colours
+\definecolor{prepblue}{RGB}{35,75,135}
+\definecolor{prepgreen}{RGB}{25,120,60}
+\definecolor{prepamber}{RGB}{185,110,0}
+\definecolor{prepred}{RGB}{170,35,35}
+\definecolor{prepgrey}{gray}{0.45}
+
+% ---------------------------------------------------------------- page setup
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55\baselineskip plus 2pt minus 1pt}
+\setlength{\emergencystretch}{2em}
+\raggedbottom
+
+\def\prep@course{}
+\def\prep@setid{}
+\def\prep@kind{}
+
+\ifprep@report\else
+  \pagestyle{fancy}
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0.3pt}
+  \renewcommand{\footrulewidth}{0pt}
+  \fancyhead[L]{\small\prep@course}
+  \fancyhead[R]{\small\prep@setid\ifx\prep@kind\empty\else\ \textperiodcentered\ \prep@kind\fi}
+  \fancyfoot[C]{\small\thepage\ / \pageref{LastPage}}
+\fi
+
+% ---------------------------------------------------------------- math shortcuts
+% \providecommand: never overrides something LaTeX or a package already defines.
+\providecommand{\ket}[1]{\left|#1\right\rangle}
+\providecommand{\bra}[1]{\left\langle#1\right|}
+\providecommand{\braket}[2]{\left\langle#1\middle|#2\right\rangle}
+\providecommand{\expval}[1]{\left\langle#1\right\rangle}
+\providecommand{\abs}[1]{\left|#1\right|}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+\providecommand{\dd}{\mathrm{d}}
+\providecommand{\ii}{\mathrm{i}}
+\providecommand{\R}{\mathbb{R}}
+\providecommand{\C}{\mathbb{C}}
+\providecommand{\N}{\mathbb{N}}
+\providecommand{\Z}{\mathbb{Z}}
+\providecommand{\Q}{\mathbb{Q}}
+\providecommand{\grad}{\nabla}
+\providecommand{\curl}{\nabla\times}
+\providecommand{\diverg}{\nabla\cdot}
+
+% ---------------------------------------------------------------- misuse guards
+% Every structural macro exists in two versions: an error stub (valid everywhere) and the
+% real thing, switched on only inside the environment it belongs to.
+\newcommand{\prep@outside}[2]{%
+  \PackageError{prep}{\string#1\space used outside \string\begin{#2}}%
+    {Use \string#1\space only between \string\begin{#2} and \string\end{#2}.}}
+\newcommand{\subq}[1]{\prep@outside\subq{subqs}}
+\newcommand{\opt}{\prep@outside\opt{mc}}
+\newcommand{\rubric}[2]{\prep@outside\rubric{solution}}
+\newcommand{\pitfall}[1]{\prep@outside\pitfall{solution}}
+\newcommand{\youwrote}[1]{\prep@outside\youwrote{fbitem}}
+\newcommand{\firsterror}[1]{\prep@outside\firsterror{fbitem}}
+\newcommand{\fix}[1]{\prep@outside\fix{fbitem}}
+\newcommand{\takeaway}[1]{\prep@outside\takeaway{fbitem}}
+
+% ---------------------------------------------------------------- title block
+% \prepheader{course name}{set id}{kind label}{time}{points}{aids}
+\newcommand{\prepheader}[6]{%
+  \gdef\prep@course{#1}\gdef\prep@setid{#2}\gdef\prep@kind{#3}%
+  \begingroup
+    \noindent{\Large\bfseries #1\hfill #2\par}%
+    \noindent{\large #3\par}%
+    \vspace{0.2\baselineskip}\hrule\vspace{0.3\baselineskip}%
+    \noindent\textbf{Time:} #4\hfill\textbf{Points:} #5\hfill\textbf{Aids:} #6\par
+    \vspace{0.3\baselineskip}\hrule\vspace{1.2\baselineskip}%
+  \endgroup}
+
+% ---------------------------------------------------------------- problems and sub-questions
+\newcounter{prepprob}
+% \problem{Title}{points}
+\newcommand{\problem}[2]{%
+  \par\addvspace{\baselineskip}\Needspace{6\baselineskip}%
+  \refstepcounter{prepprob}%
+  \addcontentsline{toc}{section}{Problem~\theprepprob\ \textemdash\ #1}%
+  \noindent{\large\bfseries Problem~\theprepprob\ \textemdash\ #1\hfill(#2\,p)\par}%
+  \nobreak\vspace{0.15\baselineskip}\hrule\nobreak\vspace{0.5\baselineskip}}
+
+% The points sit in the right margin on the first line of the item (a zero-width box, not
+% \marginpar, which misaligns inside lists).
+\newcommand{\prep@subq}[1]{\item\leavevmode\rlap{\kern\dimexpr\linewidth+\marginparsep\relax
+  \hbox to \marginparwidth{\footnotesize\bfseries #1\,p\hss}}}
+\newlist{subqs}{enumerate}{1}
+\setlist[subqs]{label=\theprepprob.\arabic*,leftmargin=3.2em,labelwidth=2.6em,labelsep=0.6em,%
+  align=left,itemsep=0.8em,topsep=0.3em,parsep=0pt,before=\let\subq\prep@subq}
+
+\newcommand{\prep@opt}{\item}
+\newlist{mc}{enumerate}{1}
+\setlist[mc]{label=(\alph*),leftmargin=2.4em,labelwidth=1.8em,labelsep=0.5em,%
+  align=left,itemsep=0.15em,topsep=0.3em,parsep=0pt,before=\let\opt\prep@opt}
+
+% ---------------------------------------------------------------- answer key
+\newcommand{\prep@rubric}[2]{\par{\hangindent=3.4em\hangafter=1\noindent
+  \makebox[3.4em][l]{\textcolor{prepblue}{\textsf{\footnotesize\bfseries[#1\,p]}}}#2\par}}
+\newcommand{\prep@pitfall}[1]{\par{\noindent\textcolor{prepred}{\textbf{Pitfall.}}\ #1\par}}
+
+\newtcolorbox{solution}{enhanced jigsaw,breakable,sharp corners,frame hidden,boxrule=0pt,%
+  borderline west={2.5pt}{0pt}{prepblue},colback=black!4,%
+  left=8pt,right=6pt,top=4pt,bottom=4pt,before skip=6pt,after skip=8pt,%
+  before upper={\setlength{\parindent}{0pt}\setlength{\parskip}{0.4\baselineskip}%
+    \let\rubric\prep@rubric\let\pitfall\prep@pitfall\textcolor{prepblue}{\textbf{Solution.}}\ }}
+
+% ---------------------------------------------------------------- feedback
+\newcommand{\prep@fbcolor}[2]{%
+  \ifdim\dimexpr#1pt\relax<\dimexpr#2pt\relax
+    \ifdim\dimexpr#1pt\relax>0pt prepamber\else prepred\fi
+  \else prepgreen\fi}
+\newcommand{\prep@fbline}[2]{\par\noindent\textcolor{prepblue}{\textbf{#1}}\ #2\par}
+\newcommand{\prep@youwrote}[1]{\prep@fbline{You wrote:}{#1}}
+\newcommand{\prep@firsterror}[1]{\prep@fbline{First error:}{#1}}
+\newcommand{\prep@fix}[1]{\prep@fbline{Fix:}{#1}}
+\newcommand{\prep@takeaway}[1]{\prep@fbline{Takeaway:}{\textbf{#1}}}
+
+% \begin{fbitem}{item id}{score}{max} ... \end{fbitem}
+\newtcolorbox{fbitem}[3]{enhanced jigsaw,breakable,sharp corners,frame hidden,boxrule=0pt,%
+  borderline west={3pt}{0pt}{\prep@fbcolor{#2}{#3}},colback=white,%
+  left=9pt,right=2pt,top=3pt,bottom=3pt,before skip=7pt,after skip=7pt,%
+  before upper={\setlength{\parindent}{0pt}\setlength{\parskip}{0.3\baselineskip}%
+    \let\youwrote\prep@youwrote\let\firsterror\prep@firsterror\let\fix\prep@fix\let\takeaway\prep@takeaway
+    \noindent\textbf{Item #1}\hfill\textcolor{\prep@fbcolor{#2}{#3}}{\textbf{#2\,/\,#3}}\par\nobreak}}
+
+
+% ---------------------------------------------------------------- contents and review layout
+% \preptoc: a compact clickable table of contents; put it right after \prepheader.
+% Entries come from \section, \problem, \reviewpart, \reviewitem and \reviewshort.
+\newcommand{\preptoc}{%
+  \begingroup\small\setcounter{tocdepth}{2}\tableofcontents\endgroup
+  \par\vspace{0.6\baselineskip}}
+
+% Reviews. \reviewpart{Title}{one-line intro} starts a part on a new page;
+% \reviewitem{id}{title}{score}{max} starts a full review (new page, unless it directly
+% follows a part heading); \reviewshort{id}{title}{score text} heads a short review.
+\newif\ifprep@afterpart
+\newcommand{\reviewpart}[2]{%
+  \clearpage\phantomsection\addcontentsline{toc}{section}{#1}%
+  \par\noindent{\LARGE\bfseries\textcolor{prepblue}{#1}\par}\vspace{0.2\baselineskip}%
+  \noindent{\small #2\par}\vspace{0.5\baselineskip}\hrule\vspace{0.6\baselineskip}%
+  \global\prep@afterparttrue}
+\newcommand{\reviewitem}[4]{%
+  \ifprep@afterpart\par\addvspace{1.2\baselineskip}\else\clearpage\fi
+  \global\prep@afterpartfalse
+  \phantomsection\addcontentsline{toc}{subsection}{Item #1 \textemdash\ #2 \ (#3\,/\,#4)}%
+  \par\noindent{\Large\bfseries\textcolor{prepblue}{Item #1}\ \textemdash\ #2\hfill\textcolor{prepred}{#3\,/\,#4}\par}%
+  \nobreak\vspace{0.15\baselineskip}\hrule\nobreak\vspace{0.4\baselineskip}}
+\newcommand{\reviewshort}[3]{%
+  \global\prep@afterpartfalse
+  \par\addvspace{0.8\baselineskip}\Needspace{6\baselineskip}%
+  \phantomsection\addcontentsline{toc}{subsection}{Item #1 \textemdash\ #2 \ (#3)}%
+  \noindent{\large\bfseries\textcolor{prepblue}{Item #1}\ \textemdash\ #2\hfill\textcolor{prepred}{#3}\par}%
+  \nobreak\vspace{0.1\baselineskip}\hrule\nobreak\vspace{0.3\baselineskip}}
+
+% Building blocks used in reviews and lessons.
+\newcommand{\ok}{\textcolor{prepgreen}{$\checkmark$}}
+\newcommand{\bad}{\textcolor{prepred}{$\times$}}
+\newcommand{\step}[1]{\par\medskip\Needspace{5\baselineskip}\noindent\textbf{\textcolor{prepblue}{#1}}\par\nobreak\smallskip}
+\newtcolorbox{redo}{enhanced jigsaw,breakable,sharp corners,colback=prepamber!7,colframe=prepamber,boxrule=0.5pt,%
+  left=7pt,right=7pt,top=3pt,bottom=3pt,before skip=8pt,after skip=8pt,%
+  before upper={\setlength{\parindent}{0pt}\setlength{\parskip}{0.4\baselineskip}\textcolor{prepamber}{\textbf{Redo.}}\ }}
+\newtcolorbox{mistakebook}{enhanced jigsaw,breakable,sharp corners,colback=prepgreen!7,colframe=prepgreen,boxrule=0.5pt,%
+  left=7pt,right=7pt,top=3pt,bottom=3pt,before skip=8pt,after skip=8pt,%
+  before upper={\setlength{\parindent}{0pt}\setlength{\parskip}{0.4\baselineskip}\textcolor{prepgreen}{\textbf{For the mistake book.}}\ }}
+\newtcolorbox{summary}[1]{enhanced jigsaw,breakable,sharp corners,colback=prepblue!6,colframe=prepblue,boxrule=0.5pt,%
+  left=7pt,right=7pt,top=3pt,bottom=3pt,before skip=8pt,after skip=8pt,%
+  before upper={\setlength{\parindent}{0pt}\setlength{\parskip}{0.3\baselineskip}\textcolor{prepblue}{\textbf{#1}}\par\nobreak}}

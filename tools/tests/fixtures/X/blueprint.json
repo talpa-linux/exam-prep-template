@@ -1,0 +1,101 @@
+{
+  "course": "X",
+  "duration_min": 120,
+  "total_points": 100,
+  "grade_divisor": 10,
+  "pass_grade": 5.5,
+  "archetypes": [
+    {
+      "id": "chain",
+      "name": "Chain rule & implicit differentiation",
+      "group": "Differentiation",
+      "weight": 0.5,
+      "typical_points": 10,
+      "typical_minutes": 15,
+      "format": "open",
+      "covered_from": "2026-09-01"
+    },
+    {
+      "id": "integ",
+      "name": "Integration techniques (substitution, parts)",
+      "group": "Integration",
+      "weight": 0.5,
+      "typical_points": 10,
+      "typical_minutes": 20,
+      "format": "open",
+      "covered_from": "2026-09-01"
+    },
+    {
+      "id": "series",
+      "name": "Series: convergence tests (ratio_test, comparison)",
+      "group": "Series",
+      "weight": 0.4,
+      "typical_points": 8,
+      "typical_minutes": 20,
+      "format": "open"
+    },
+    {
+      "id": "ode",
+      "name": "First-order ODEs, 100% of the separable kind",
+      "group": "Series",
+      "weight": 0.2,
+      "typical_points": 6,
+      "typical_minutes": 15,
+      "format": "mc",
+      "covered_from": "2026-10-20"
+    },
+    {
+      "id": "limits",
+      "name": "Limits and continuity",
+      "group": "Differentiation",
+      "weight": 0.2,
+      "typical_points": 6,
+      "typical_minutes": 10,
+      "format": "open",
+      "covered_from": "2026-09-01"
+    },
+    {
+      "id": "proof",
+      "name": "Epsilon-delta proofs",
+      "group": "Proofs",
+      "weight": 0.1,
+      "typical_points": 5,
+      "typical_minutes": 12,
+      "format": "proof",
+      "covered_from": "2026-09-01"
+    },
+    {
+      "id": "taylor",
+      "name": "Taylor polynomials with $O(x^n)$ remainder",
+      "group": "Series",
+      "weight": 0.1,
+      "typical_points": 5,
+      "typical_minutes": 18,
+      "format": "open",
+      "covered_from": "2026-09-01"
+    }
+  ],
+  "full_exam_structure": [
+    {
+      "slot": "Problem 1",
+      "points": 50,
+      "archetypes": [
+        "chain",
+        "integ"
+      ],
+      "note": "Two long problems"
+    },
+    {
+      "slot": "Problem 2",
+      "points": 50,
+      "archetypes": [
+        "series",
+        "ode",
+        "limits",
+        "proof",
+        "taylor"
+      ],
+      "note": "Mixed"
+    }
+  ]
+}

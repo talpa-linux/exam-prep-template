@@ -1,0 +1,58 @@
+{
+  "course": "X",
+  "set": "X-T01",
+  "graded_on": "2026-10-08",
+  "time_spent_min": null,
+  "items": [
+    {
+      "item": "1.1",
+      "score": 8,
+      "max": 10,
+      "status": "graded",
+      "errors": [
+        "algebra"
+      ],
+      "confidence": "high",
+      "takeaway": "Forgot the 50% factor & the minus sign; x_1 # y^2 ~ z \\ backslash {braces}."
+    },
+    {
+      "item": "1.2",
+      "score": 10,
+      "max": 10,
+      "status": "graded",
+      "errors": [],
+      "confidence": "high",
+      "takeaway": ""
+    },
+    {
+      "item": "1.3",
+      "score": 6,
+      "max": 8,
+      "status": "graded",
+      "errors": [
+        "justification",
+        "notation"
+      ],
+      "confidence": "low",
+      "takeaway": "Costs $5 and $10 but an unbalanced $ stays plain; well-formed $\\frac{1}{2}mv^2$ is math."
+    },
+    {
+      "item": "1.4",
+      "score": 6,
+      "max": 6,
+      "status": "graded",
+      "errors": [],
+      "confidence": "high",
+      "takeaway": ""
+    },
+    {
+      "item": "1.5",
+      "score": 5,
+      "max": 5,
+      "status": "graded",
+      "errors": [],
+      "confidence": "medium",
+      "takeaway": ""
+    }
+  ]
+}

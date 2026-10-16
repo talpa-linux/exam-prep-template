@@ -1,0 +1,139 @@
+{
+  "course": "RPT",
+  "duration_min": 180,
+  "total_points": 90,
+  "grade_divisor": 9,
+  "pass_grade": 5.5,
+  "archetypes": [
+    {
+      "id": "op-commutator",
+      "name": "Commutators and uncertainty relations",
+      "group": "Operators",
+      "weight": 0.09,
+      "typical_points": 10,
+      "typical_minutes": 15,
+      "format": "proof",
+      "covered_from": "2026-09-15"
+    },
+    {
+      "id": "op-eigen",
+      "name": "Eigenvalue problems for $\\hat{H}$ in a finite basis",
+      "group": "Operators",
+      "weight": 0.08,
+      "typical_points": 12,
+      "typical_minutes": 12,
+      "format": "open",
+      "covered_from": "2026-09-15"
+    },
+    {
+      "id": "op-ladder",
+      "name": "Ladder operators for the harmonic oscillator, including normalisation of $|n\\rangle$ and matrix elements",
+      "group": "Operators",
+      "weight": 0.07,
+      "typical_points": 12,
+      "typical_minutes": 12,
+      "format": "mc",
+      "covered_from": "2026-09-15"
+    },
+    {
+      "id": "wf-box",
+      "name": "Particle in a box: energies, normalisation, expectation values",
+      "group": "Wavefunctions",
+      "weight": 0.12,
+      "typical_points": 12,
+      "typical_minutes": 12,
+      "format": "open",
+      "covered_from": "2026-09-15"
+    },
+    {
+      "id": "wf-step",
+      "name": "Scattering at a potential step, R & T coefficients",
+      "group": "Wavefunctions",
+      "weight": 0.1,
+      "typical_points": 8,
+      "typical_minutes": 12,
+      "format": "proof",
+      "covered_from": "2026-09-15"
+    },
+    {
+      "id": "wf-tunnel",
+      "name": "Tunnelling through a barrier (WKB estimate)",
+      "group": "Wavefunctions",
+      "weight": 0.06,
+      "typical_points": 10,
+      "typical_minutes": 12,
+      "format": "open",
+      "covered_from": "2026-09-15"
+    },
+    {
+      "id": "wf-delta",
+      "name": "Delta-function potentials: bound state and scattering",
+      "group": "Wavefunctions",
+      "weight": 0.05,
+      "typical_points": 8,
+      "typical_minutes": 25,
+      "format": "open",
+      "covered_from": "2026-09-15"
+    },
+    {
+      "id": "am-spin",
+      "name": "Spin-1/2 measurements and rotations",
+      "group": "Spin & angular momentum",
+      "weight": 0.11,
+      "typical_points": 12,
+      "typical_minutes": 12,
+      "format": "open",
+      "covered_from": "2026-09-15"
+    },
+    {
+      "id": "am-add",
+      "name": "Addition of angular momenta",
+      "group": "Spin & angular momentum",
+      "weight": 0.07,
+      "typical_points": 12,
+      "typical_minutes": 12,
+      "format": "proof",
+      "covered_from": "2026-09-15"
+    },
+    {
+      "id": "am-hydrogen",
+      "name": "Hydrogen atom: radial and angular parts",
+      "group": "Spin & angular momentum",
+      "weight": 0.1,
+      "typical_points": 8,
+      "typical_minutes": 15,
+      "format": "open",
+      "covered_from": "2026-09-15"
+    },
+    {
+      "id": "ap-pert",
+      "name": "Time-independent perturbation theory",
+      "group": "Approximations",
+      "weight": 0.09,
+      "typical_points": 12,
+      "typical_minutes": 15,
+      "format": "mc",
+      "covered_from": "2026-09-15"
+    },
+    {
+      "id": "ap-var",
+      "name": "Variational method",
+      "group": "Approximations",
+      "weight": 0.06,
+      "typical_points": 10,
+      "typical_minutes": 15,
+      "format": "open",
+      "covered_from": "2026-10-20"
+    }
+  ],
+  "full_exam_structure": [
+    {
+      "slot": "Problem 1",
+      "points": 30,
+      "archetypes": [
+        "wf-box"
+      ],
+      "note": "x"
+    }
+  ]
+}

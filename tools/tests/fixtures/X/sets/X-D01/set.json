@@ -1,0 +1,65 @@
+{
+  "course": "X",
+  "set": "X-D01",
+  "kind": "diagnostic",
+  "created": "2026-10-05",
+  "duration_min": 60,
+  "total_points": 33,
+  "items": [
+    {
+      "item": "1.1",
+      "archetype": "chain",
+      "level": 2,
+      "max": 5,
+      "minutes": 8,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "plain chain rule on sin(x^2)"
+    },
+    {
+      "item": "1.2",
+      "archetype": "integ",
+      "level": 2,
+      "max": 10,
+      "minutes": 15,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "substitution u = x^2"
+    },
+    {
+      "item": "1.3",
+      "archetype": "series",
+      "level": 2,
+      "max": 8,
+      "minutes": 12,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "ratio test on n!/n^n"
+    },
+    {
+      "item": "1.4",
+      "archetype": "ode",
+      "level": 2,
+      "max": 6,
+      "minutes": 8,
+      "format": "mc",
+      "mc_answer": "C",
+      "not_yet_covered": true,
+      "variation": "separable ODE with an exponential"
+    },
+    {
+      "item": "1.5",
+      "archetype": "proof",
+      "level": 2,
+      "max": 4,
+      "minutes": 10,
+      "format": "proof",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "epsilon-delta for 2x+1"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "course": "EMP",
+  "duration_min": 90,
+  "total_points": 60,
+  "grade_divisor": 6,
+  "pass_grade": 5.5,
+  "archetypes": [
+    {
+      "id": "e1",
+      "name": "First topic",
+      "group": "Alpha",
+      "weight": 0.6,
+      "typical_points": 10,
+      "typical_minutes": 15,
+      "format": "open",
+      "covered_from": "2026-09-01"
+    },
+    {
+      "id": "e2",
+      "name": "Second topic, not lectured until later",
+      "group": "Beta",
+      "weight": 0.4,
+      "typical_points": 10,
+      "typical_minutes": 15,
+      "format": "open",
+      "covered_from": "2026-10-27"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+# Allowlist: only the template itself is tracked. Course folders, materials, photos,
+# grades, progress reports and the archive stay out of git, so nobody's exams or work
+# get committed or shared by accident.
+/*
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/SETUP.md
+!/MAINTAINING.md
+!/CLAUDE.md
+!/.claude/
+!/prompts/
+!/tools/
+!/guide/
+
+# per-user files inside tracked folders
+/tools/config.json
+/.claude/settings.local.json
+__pycache__/
+*.pyc
+/guide/*.aux
+/guide/*.log
+/guide/*.out
+/guide/*.fls
+/guide/*.fdb_latexmk

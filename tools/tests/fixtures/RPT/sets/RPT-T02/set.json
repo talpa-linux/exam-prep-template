@@ -1,0 +1,87 @@
+{
+  "course": "RPT",
+  "set": "RPT-T02",
+  "kind": "train",
+  "created": "2026-10-06",
+  "duration_min": 60,
+  "total_points": 41,
+  "items": [
+    {
+      "item": "1.2",
+      "archetype": "op-eigen",
+      "level": 3,
+      "max": 5,
+      "minutes": 15,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-T02/1 of op-eigen"
+    },
+    {
+      "item": "1.3",
+      "archetype": "wf-tunnel",
+      "level": 3,
+      "max": 8,
+      "minutes": 10,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-T02/2 of wf-tunnel"
+    },
+    {
+      "item": "1.4",
+      "archetype": "op-commutator",
+      "level": 2,
+      "max": 8,
+      "minutes": 15,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-T02/3 of op-commutator"
+    },
+    {
+      "item": "2.1",
+      "archetype": "ap-pert",
+      "level": 2,
+      "max": 4,
+      "minutes": 15,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-T02/4 of ap-pert"
+    },
+    {
+      "item": "2.2",
+      "archetype": "wf-delta",
+      "level": 2,
+      "max": 5,
+      "minutes": 15,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-T02/5 of wf-delta"
+    },
+    {
+      "item": "2.3",
+      "archetype": "am-spin",
+      "level": 3,
+      "max": 6,
+      "minutes": 15,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-T02/6 of am-spin"
+    },
+    {
+      "item": "2.4",
+      "archetype": "wf-step",
+      "level": 2,
+      "max": 5,
+      "minutes": 15,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-T02/7 of wf-step"
+    }
+  ]
+}

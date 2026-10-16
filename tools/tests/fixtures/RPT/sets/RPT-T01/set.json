@@ -1,0 +1,87 @@
+{
+  "course": "RPT",
+  "set": "RPT-T01",
+  "kind": "train",
+  "created": "2026-10-03",
+  "duration_min": 85,
+  "total_points": 41,
+  "items": [
+    {
+      "item": "1.2",
+      "archetype": "op-ladder",
+      "level": 2,
+      "max": 5,
+      "minutes": 10,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-T01/1 of op-ladder"
+    },
+    {
+      "item": "1.3",
+      "archetype": "am-hydrogen",
+      "level": 2,
+      "max": 5,
+      "minutes": 10,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-T01/2 of am-hydrogen"
+    },
+    {
+      "item": "1.4",
+      "archetype": "op-eigen",
+      "level": 1,
+      "max": 5,
+      "minutes": 8,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-T01/3 of op-eigen"
+    },
+    {
+      "item": "2.1",
+      "archetype": "am-spin",
+      "level": 2,
+      "max": 6,
+      "minutes": 10,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-T01/4 of am-spin"
+    },
+    {
+      "item": "2.2",
+      "archetype": "op-commutator",
+      "level": 1,
+      "max": 8,
+      "minutes": 15,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-T01/5 of op-commutator"
+    },
+    {
+      "item": "2.3",
+      "archetype": "am-add",
+      "level": 3,
+      "max": 8,
+      "minutes": 8,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-T01/6 of am-add"
+    },
+    {
+      "item": "2.4",
+      "archetype": "ap-pert",
+      "level": 1,
+      "max": 4,
+      "minutes": 8,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-T01/7 of ap-pert"
+    }
+  ]
+}

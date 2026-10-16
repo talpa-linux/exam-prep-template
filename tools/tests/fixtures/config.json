@@ -1,0 +1,44 @@
+{
+  "courses": {
+    "X": {
+      "dir": "Test Course",
+      "name": "Calculus Test Course (X)",
+      "exam_date": "2026-11-10"
+    },
+    "RPT": {
+      "dir": "Report Demo",
+      "name": "Quantum Report Demo (RPT)",
+      "exam_date": "2026-11-04"
+    },
+    "EMP": {
+      "dir": "Empty Course",
+      "name": "Blueprint Only (EMP)",
+      "exam_date": "2026-11-12"
+    },
+    "NOBP": {
+      "dir": "No Blueprint",
+      "name": "Nothing Written Yet (NOBP)",
+      "exam_date": "2026-11-13"
+    },
+    "CK": {
+      "dir": "Check Course",
+      "name": "Checkset Course (CK)",
+      "exam_date": "2026-11-14"
+    },
+    "HLP": {
+      "dir": "Help Course",
+      "name": "Help Marks and Item Time (HLP)",
+      "exam_date": "2026-11-06"
+    },
+    "HNT": {
+      "dir": "Hint Course",
+      "name": "Hints Before the Attempt (HNT)",
+      "exam_date": "2026-11-07"
+    }
+  },
+  "study_days": [
+    "Tue",
+    "Wed",
+    "Thu"
+  ]
+}

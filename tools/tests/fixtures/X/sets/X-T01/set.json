@@ -1,0 +1,65 @@
+{
+  "course": "X",
+  "set": "X-T01",
+  "kind": "train",
+  "created": "2026-10-08",
+  "duration_min": 90,
+  "total_points": 39,
+  "items": [
+    {
+      "item": "1.1",
+      "archetype": "chain",
+      "level": 3,
+      "max": 10,
+      "minutes": 20,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "nested exp and sqrt composition"
+    },
+    {
+      "item": "1.2",
+      "archetype": "integ",
+      "level": 1,
+      "max": 10,
+      "minutes": 14,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "parts with ln x, scaffolded"
+    },
+    {
+      "item": "1.3",
+      "archetype": "series",
+      "level": 2,
+      "max": 8,
+      "minutes": 20,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "comparison test with a 1/n^2 bound"
+    },
+    {
+      "item": "1.4",
+      "archetype": "limits",
+      "level": 3,
+      "max": 6,
+      "minutes": 13,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "one-sided limit of |x|/x type"
+    },
+    {
+      "item": "1.5",
+      "archetype": "proof",
+      "level": 3,
+      "max": 5,
+      "minutes": 15,
+      "format": "proof",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "uniqueness of limits"
+    }
+  ]
+}

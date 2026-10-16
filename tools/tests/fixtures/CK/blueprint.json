@@ -1,0 +1,27 @@
+{
+  "course": "CK",
+  "duration_min": 60,
+  "total_points": 20,
+  "grade_divisor": 10,
+  "pass_grade": 5.5,
+  "archetypes": [
+    {
+      "id": "alpha",
+      "name": "Alpha topic",
+      "group": "G",
+      "weight": 0.5,
+      "typical_points": 10,
+      "typical_minutes": 15,
+      "format": "open"
+    },
+    {
+      "id": "beta",
+      "name": "Beta topic",
+      "group": "G",
+      "weight": 0.5,
+      "typical_points": 10,
+      "typical_minutes": 15,
+      "format": "open"
+    }
+  ]
+}

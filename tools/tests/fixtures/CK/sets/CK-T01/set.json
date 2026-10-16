@@ -1,0 +1,43 @@
+{
+  "course": "CK",
+  "set": "CK-T01",
+  "kind": "train",
+  "created": "2026-10-13",
+  "duration_min": 40,
+  "total_points": 20,
+  "items": [
+    {
+      "item": "1.1",
+      "archetype": "alpha",
+      "level": 2,
+      "max": 10,
+      "minutes": 20,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": null
+    },
+    {
+      "item": "1.2",
+      "archetype": "beta",
+      "level": 1,
+      "max": 5,
+      "minutes": 10,
+      "format": "mc",
+      "mc_answer": "B",
+      "not_yet_covered": false,
+      "variation": null
+    },
+    {
+      "item": "1.3",
+      "archetype": "beta",
+      "level": 3,
+      "max": 5,
+      "minutes": 10,
+      "format": "mathematica-mc",
+      "mc_answer": "d",
+      "not_yet_covered": false,
+      "variation": null
+    }
+  ]
+}

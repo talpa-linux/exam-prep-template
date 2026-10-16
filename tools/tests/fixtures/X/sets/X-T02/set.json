@@ -1,0 +1,54 @@
+{
+  "course": "X",
+  "set": "X-T02",
+  "kind": "train",
+  "created": "2026-10-10",
+  "duration_min": 60,
+  "total_points": 33,
+  "items": [
+    {
+      "item": "1.1",
+      "archetype": "chain",
+      "level": 3,
+      "max": 10,
+      "minutes": 20,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "implicit differentiation of x^2 + y^3 = 1"
+    },
+    {
+      "item": "1.2",
+      "archetype": "integ",
+      "level": 2,
+      "max": 10,
+      "minutes": 20,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "partial fractions"
+    },
+    {
+      "item": "1.3",
+      "archetype": "series",
+      "level": 2,
+      "max": 8,
+      "minutes": 20,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "alternating series error bound"
+    },
+    {
+      "item": "1.4",
+      "archetype": "proof",
+      "level": 1,
+      "max": 5,
+      "minutes": 8,
+      "format": "proof",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "epsilon-delta scaffolded"
+    }
+  ]
+}

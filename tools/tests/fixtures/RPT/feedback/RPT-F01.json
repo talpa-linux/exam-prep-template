@@ -1,0 +1,123 @@
+{
+  "course": "RPT",
+  "set": "RPT-F01",
+  "graded_on": "2026-10-10",
+  "time_spent_min": 175,
+  "items": [
+    {
+      "item": "1.2",
+      "score": 4.5,
+      "max": 6,
+      "status": "graded",
+      "errors": [],
+      "confidence": "medium",
+      "takeaway": "Mixed up $\\hbar$ and $h$ in the energy formula."
+    },
+    {
+      "item": "1.3",
+      "score": 2.0,
+      "max": 6,
+      "status": "graded",
+      "errors": [
+        "misread",
+        "algebra"
+      ],
+      "confidence": "low",
+      "takeaway": "Mixed up $\\hbar$ and $h$ in the energy formula."
+    },
+    {
+      "item": "1.4",
+      "score": 3.5,
+      "max": 8,
+      "status": "graded",
+      "errors": [
+        "notation"
+      ],
+      "confidence": "high",
+      "takeaway": "Boundary conditions: the wavefunction must be continuous at $x=a$."
+    },
+    {
+      "item": "2.1",
+      "score": 3.5,
+      "max": 4,
+      "status": "graded",
+      "errors": [
+        "setup"
+      ],
+      "confidence": "high",
+      "takeaway": "Boundary conditions: the wavefunction must be continuous at $x=a$."
+    },
+    {
+      "item": "2.2",
+      "score": 5.0,
+      "max": 5,
+      "status": "graded",
+      "errors": [],
+      "confidence": "high",
+      "takeaway": ""
+    },
+    {
+      "item": "2.3",
+      "score": 5.0,
+      "max": 8,
+      "status": "graded",
+      "errors": [
+        "algebra",
+        "arithmetic"
+      ],
+      "confidence": "high",
+      "takeaway": "Normalise before computing $\\langle x\\rangle$."
+    },
+    {
+      "item": "2.4",
+      "score": 0,
+      "max": 4,
+      "status": "blank",
+      "errors": [
+        "misread"
+      ],
+      "confidence": "low",
+      "takeaway": "Mixed up $\\hbar$ and $h$ in the energy formula."
+    },
+    {
+      "item": "3.1",
+      "score": 2.5,
+      "max": 4,
+      "status": "graded",
+      "errors": [],
+      "confidence": "high",
+      "takeaway": "Mixed up $\\hbar$ and $h$ in the energy formula."
+    },
+    {
+      "item": "3.2",
+      "score": 2.5,
+      "max": 4,
+      "status": "graded",
+      "errors": [
+        "notation"
+      ],
+      "confidence": "high",
+      "takeaway": "Did not state why the state is an eigenstate."
+    },
+    {
+      "item": "3.3",
+      "score": 5.0,
+      "max": 6,
+      "status": "graded",
+      "errors": [
+        "notation"
+      ],
+      "confidence": "high",
+      "takeaway": "Mixed up $\\hbar$ and $h$ in the energy formula."
+    },
+    {
+      "item": "3.4",
+      "score": 0,
+      "max": 4,
+      "status": "blank",
+      "errors": [],
+      "confidence": "medium",
+      "takeaway": "Normalise before computing $\\langle x\\rangle$."
+    }
+  ]
+}

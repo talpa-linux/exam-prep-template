@@ -1,0 +1,131 @@
+{
+  "course": "RPT",
+  "set": "RPT-F01",
+  "kind": "full",
+  "created": "2026-10-10",
+  "duration_min": 175,
+  "total_points": 59,
+  "items": [
+    {
+      "item": "1.2",
+      "archetype": "am-hydrogen",
+      "level": 2,
+      "max": 6,
+      "minutes": 8,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-F01/1 of am-hydrogen"
+    },
+    {
+      "item": "1.3",
+      "archetype": "op-eigen",
+      "level": 2,
+      "max": 6,
+      "minutes": 10,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-F01/2 of op-eigen"
+    },
+    {
+      "item": "1.4",
+      "archetype": "am-add",
+      "level": 2,
+      "max": 8,
+      "minutes": 8,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-F01/3 of am-add"
+    },
+    {
+      "item": "2.1",
+      "archetype": "op-commutator",
+      "level": 2,
+      "max": 4,
+      "minutes": 8,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-F01/4 of op-commutator"
+    },
+    {
+      "item": "2.2",
+      "archetype": "op-ladder",
+      "level": 3,
+      "max": 5,
+      "minutes": 15,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-F01/5 of op-ladder"
+    },
+    {
+      "item": "2.3",
+      "archetype": "wf-tunnel",
+      "level": 2,
+      "max": 8,
+      "minutes": 15,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-F01/6 of wf-tunnel"
+    },
+    {
+      "item": "2.4",
+      "archetype": "wf-step",
+      "level": 2,
+      "max": 4,
+      "minutes": 10,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-F01/7 of wf-step"
+    },
+    {
+      "item": "3.1",
+      "archetype": "wf-box",
+      "level": 1,
+      "max": 4,
+      "minutes": 8,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-F01/8 of wf-box"
+    },
+    {
+      "item": "3.2",
+      "archetype": "am-spin",
+      "level": 2,
+      "max": 4,
+      "minutes": 8,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-F01/9 of am-spin"
+    },
+    {
+      "item": "3.3",
+      "archetype": "wf-delta",
+      "level": 3,
+      "max": 6,
+      "minutes": 8,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-F01/10 of wf-delta"
+    },
+    {
+      "item": "3.4",
+      "archetype": "ap-pert",
+      "level": 1,
+      "max": 4,
+      "minutes": 10,
+      "format": "open",
+      "mc_answer": null,
+      "not_yet_covered": false,
+      "variation": "variant RPT-F01/11 of ap-pert"
+    }
+  ]
+}
